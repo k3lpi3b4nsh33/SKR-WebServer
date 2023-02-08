@@ -615,7 +615,7 @@ HttpHandler::ERROR_TYPE HttpHandler::sendErrorResponse(const string& errCode, co
             "<html>"
             "<title>" + errStr + "</title>"
                                  "<body>" + errStr +
-            "<hr><em> Kiprey's Web Server</em>"
+            "<hr><em> Kelpie Web Server</em>"
             "</body>"
             "</html>";
     return sendResponse(errCode, errMsg, "text/html", responseBody);
