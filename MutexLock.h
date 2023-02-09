@@ -8,8 +8,7 @@
 #include <pthread.h>
 
 /**
- * @brief MutexLock 将 pthread_mutex 封装成一个类,
- *        这样做的好处是不用记住那些繁杂的 pthread 开头的函数使用方式
+ * MutexLock encapsulates pthread_mutex into a class
  */
 class MutexLock
 {
@@ -24,22 +23,15 @@ public:
 };
 
 /**
- * @brief MutexLockGuard 主要是为了自动获取锁/释放锁, 防止意外情况下忘记释放锁
- *        而且块状的锁定区域更容易让人理解代码
+ * MutexLockGuard encapsulates MutexLock into a class
+ * Make it easier for us to understand the code
  */
 class MutexLockGuard
 {
 private:
     MutexLock& lock_;
 public:
-    /**
-     * @brief 声明 MutexLockGuard 时自动上锁
-     * @param lock 待锁定的资源
-     */
     MutexLockGuard(MutexLock& mutex) : lock_(mutex) { lock_.lock(); }
-    /**
-     * @brief 当前作用域结束时自动释放锁, 防止遗忘
-     */
     ~MutexLockGuard() { lock_.unlock(); }
 };
 
