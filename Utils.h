@@ -17,7 +17,6 @@ using std::ostream;
 
 int socket_bind_and_listen(int port);
 bool setFdNoBlock(int fd);
-bool setSocketNoDelay(int fd);
 
 ssize_t readn(int fd, void* buf, size_t len);
 ssize_t writen(int fd, const void* buf, size_t len, bool isWrite = false);
