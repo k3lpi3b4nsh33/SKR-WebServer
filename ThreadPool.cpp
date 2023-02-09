@@ -31,8 +31,6 @@ ThreadPool::ThreadPool(size_t threadNum, ShutdownMode shutdown_mode, size_t maxQ
  */
 ThreadPool::~ThreadPool()
 {
-    // 向任务队列中添加退出线程事件,注意上锁
-    // 注意在 cond 使用之前一定要上 mutex
     {
         // when processing the task queue, we have to lock the thread
         MutexLockGuard guard(threadpool_mutex_);
