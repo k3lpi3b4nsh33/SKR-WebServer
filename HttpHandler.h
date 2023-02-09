@@ -118,6 +118,9 @@ private:
     ERROR_TYPE sendErrorResponse(const string& errCode, const string& errMsg);
 };
 
+/**
+ * @brief the response or send file type
+ */
 class MimeType
 {
 private:
