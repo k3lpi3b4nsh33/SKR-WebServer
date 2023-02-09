@@ -79,7 +79,7 @@ private:
     static string www_path;
 
 
-    const size_t MAXBUF = 1024;
+    const size_t MAXBUF = 4096;
     const int maxAgainTimes = 10;
     const int maxCGIRuntime = 1000;
     const int cgiStepTime = 1;
