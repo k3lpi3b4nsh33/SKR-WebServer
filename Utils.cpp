@@ -262,7 +262,7 @@ bool is_path_parent(const string& parent_path, const string& child_path) {
      */
 
     if(child_p == strstr(child_p, parent_p)) {
-        // The parent is in the child, so the child [parent. len] will not cross the boundary
+        // The parent is in the child, so the child [parent.len] will not cross the boundary
         separator = child_p[strlen(parent_p)];
         if (separator == '\0' || separator == '/')
             return true;
